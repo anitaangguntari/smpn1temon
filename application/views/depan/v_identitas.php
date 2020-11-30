@@ -593,7 +593,7 @@ a:not([href]):not([tabindex]) {
             return $output;
         }
 
-        $profile = http_request("http://dapo.dikdasmen.kemdikbud.go.id/rekap/sekolahDetail?semester_id=20182&sekolah_id=844679F2A6302AA1E31C");
+        $profile = http_request("https://dapo.kemdikbud.go.id/rekap/sekolahDetail?semester_id=20182&sekolah_id=844679F2A6302AA1E31C");
 
         // ubah string JSON menjadi array
         $profile = json_decode($profile, TRUE);
@@ -609,9 +609,9 @@ a:not([href]):not([tabindex]) {
                      <div class="menu">
                         <b> <a href="<?php echo base_url('') ; ?>" style="color: black; font-family: calibri;">Home</a>&nbsp;&nbsp;<font style="color: grey;">|</font>&nbsp;&nbsp;<a href="<?php echo base_url('dapodik/identitas') ; ?>" style="color: black; font-family: calibri;">Profil</a></b></br></br><!-- &nbsp;&nbsp;<font style="color: grey;">|</font>&nbsp;&nbsp; <a href="<?php echo base_url('dapodik/rekapitulasi') ; ?>" style="color: black; font-family: calibri;">Rekapitulasi</a></b></br></br> -->
                     </div>
-                    <a href="http://dapo.dikdasmen.kemdikbud.go.id/getExcel/getProfilSekolah?semester_id=20162&sekolah_id=844679F2A6302AA1E31C" class="btn btn-primary" style=""><i class="fa fa-file-excel-o" ></i>&nbsp;Unduh Profil</a>
+                    <a href="http://dapo.kemdikbud.go.id/getExcel/getProfilSekolah?semester_id=20162&sekolah_id=844679F2A6302AA1E31C" class="btn btn-primary" style=""><i class="fa fa-file-excel-o" ></i>&nbsp;Unduh Profil</a>
                   <!--   <?php
-                         $ambil =  file_get_html('http://dapo.dikdasmen.kemdikbud.go.id/sekolah/844679F2A6302AA1E31C');
+                         $ambil =  file_get_html('http://dapo.kemdikbud.go.id/sekolah/844679F2A6302AA1E31C');
 
                         foreach($ambil->find('div.material.profile') as $article) {
                             $item['title']     = $article->find('div.cover', 0)->plaintext;
@@ -624,7 +624,7 @@ a:not([href]):not([tabindex]) {
                     ?> -->
 
                     <?php 
-                        $ambil =  file_get_html('http://dapo.dikdasmen.kemdikbud.go.id/sekolah/844679F2A6302AA1E31C');
+                        $ambil =  file_get_html('http://dapo.kemdikbud.go.id/sekolah/844679F2A6302AA1E31C');
 
                         $htl = str_get_html($ambil);
                         
@@ -633,7 +633,7 @@ a:not([href]):not([tabindex]) {
                     ?>
 
                     <?php
-                        $homepage = file_get_html('http://dapo.dikdasmen.kemdikbud.go.id/sekolah/844679F2A6302AA1E31C');
+                        $homepage = file_get_html('http://dapo.kemdikbud.go.id/sekolah/844679F2A6302AA1E31C');
                        
                         echo $homepage->find('div.cover',0)->p;
                     ?>

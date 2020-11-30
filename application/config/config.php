@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://103.135.180.16/smpn1temon/';
+$config['base_url'] = 'http://smpn1temon.sch.id/';
 $config['server_root']  = $_SERVER['DOCUMENT_ROOT'];
 /*
 |--------------------------------------------------------------------------

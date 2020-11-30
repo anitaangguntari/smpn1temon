@@ -601,7 +601,7 @@ a:not([href]):not([tabindex]) {
             return $output;
         }
 
-        $profile = http_request("http://dapo.dikdasmen.kemdikbud.go.id/rekap/sekolahDetail?semester_id=20182&sekolah_id=844679F2A6302AA1E31C");
+        $profile = http_request("https://dapo.kemdikbud.go.id/rekap/sekolahDetail?semester_id=20182&sekolah_id=844679F2A6302AA1E31C");
 
         // ubah string JSON menjadi array
         $profile = json_decode($profile, TRUE);
