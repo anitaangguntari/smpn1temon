@@ -98,11 +98,15 @@
                             <td><?php echo $a->username; ?></td>
                             <!-- <td><?php echo $a->password; ?></td> -->
                             <td><?php echo $a->jabatan; ?></td>
+                            <?php if($a->username == "anggun"){ ?>
+                            <td></td>
+                            <?php }else{?>
                             <td>
                               <a href="<?php echo base_url('admin/admin/edit/'.$a->id_admin) ?>"
                                class="btn btn-success"><i class="fa fa-edit"></i> </a>
                               <a href="<?php echo base_url('admin/admin/delete/'.$a->id_admin) ?>" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
                             </td>
+                            <?php } ?>
                         </tr>
                         <?php endforeach; ?> <!-- Selesai loop -->
                     </tbody>

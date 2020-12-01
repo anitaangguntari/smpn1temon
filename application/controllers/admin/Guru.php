@@ -20,18 +20,18 @@ class Guru extends CI_Controller{
     function tambah(){
         $id = 1;
         $data['profil']= $this->m_profil->db_edit($id)->row_array();
+        // echo $this->input->get('banks_id'); exit;
         $data['nik'] = array(
-            "nama"      => "",
-            "alamat"    => "",
-            "pekerjaan" => "",
-            "no_rt"    => "",
-            "no_rw"    => "",
-            "kel_name"    => "",
-            "kec_name"    => "",
-            "tanggallahir"    => "",
-            "tempatlahir"    => "",
-            "jenis_klmin"    => "",
-
+            "NAMA_LGKP"      => "",
+            "ALAMAT"    => "",
+            "JENIS_PKRJN" => "",
+            "NO_RT"    => "",
+            "NO_RW"    => "",
+            "KEL_NAME"    => "",
+            "KEC_NAME"    => "",
+            "JENIS_KLMIN"    => "",
+            "TMPT_LHR"    => "",
+            "TGL_LHR"    => "",
         );
 
         $ktp = $this->input->get('ktp');
@@ -39,9 +39,14 @@ class Guru extends CI_Controller{
         // jika user sudah input nik, maka ambil data niknya dari model m_rekomendasi_bbm
         if (!empty($ktp)) {
             $ambil_nik = $this->m_guru->get_nik($ktp);
-
+            // echo var_dump($ambil_nik); exit;
             $data['nik'] = json_decode($ambil_nik, true);
+            if($data['nik']['RESPON']=='Data Tidak Ditemukan'){
+                echo "<script>alert('DATA TIDAK DITEMUKAN');history.go(-1);</script>";
+            }
+
         }
+
         $this->load->view('admin/admin/v_tambah_guru', $data);
     }
 

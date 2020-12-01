@@ -103,27 +103,27 @@
                         </div>
                         <div class="form-group has-success">
                           <label class="control-label" for="inputSuccess">Nama</label>
-                          <input type="text" class="form-control" id="inputSuccess" name="nama_guru" value="<?=$nik['nama'];?>">
+                          <input type="text" class="form-control" id="inputSuccess" name="nama_guru" value="<?=$nik['NAMA_LGKP'];?>">
                         </div>
                         <div class="form-group has-success">
                           <label class="control-label" for="inputSuccess">Tanggal Lahir</label>
-                          <input type="date" class="form-control" id="inputSuccess" name="tgl_lahir_guru" value="<?=$nik['tanggallahir'];?>">
+                          <input type="date" class="form-control" id="inputSuccess" name="tgl_lahir_guru" value="<?=$nik['TGL_LHR'];?>">
                         </div>
                         <div class="form-group has-success">
                           <label class="control-label" for="inputSuccess">Tempat Lahir</label>
-                          <input type="text" class="form-control" id="inputSuccess" name="tempat_lahir" value="<?=$nik['tempatlahir'];?>">
+                          <input type="text" class="form-control" id="inputSuccess" name="tempat_lahir" value="<?=$nik['TMPT_LHR'];?>">
                         </div>
                         
                         <div class="form-group has-success">
                           <label class="control-label" for="inputSuccess">Jenis Kelamin</label>
                           <div class="radio">
                               <label>
-                                <input type="radio" name="jk_guru" id="optionsRadios1" value="Perempuan" <?php if($nik['jenis_klmin'] == "PEREMPUAN"){ echo 'checked'; }?> >Perempuan
+                                <input type="radio" name="jk_guru" id="optionsRadios1" value="Perempuan" <?php if($nik['JENIS_KLMIN'] == "PEREMPUAN"){ echo 'checked'; }?> >Perempuan
                               </label>
                           </div>
                           <div class="radio">
                               <label>
-                                <input type="radio" name="jk_guru" id="optionsRadios2" value="Laki-laki" <?php if($nik['jenis_klmin'] == "LAKI-LAKI"){ echo 'checked'; }?> >Laki-laki
+                                <input type="radio" name="jk_guru" id="optionsRadios2" value="Laki-laki" <?php if($nik['JENIS_KLMIN'] == "LAKI-LAKI"){ echo 'checked'; }?> >Laki-laki
                               </label>
                           </div>
                         </div>
@@ -131,7 +131,7 @@
                         <div class="col-md-6">
                         <div class="form-group has-success">
                           <label class="control-label" for="inputSuccess">Alamat</label>
-                          <input type="text" class="form-control" id="inputSuccess" name="alamat_guru" value="<?=$nik['alamat'];?>, RT <?=$nik['no_rt'];?>, RW <?=$nik['no_rw'];?>, <?=$nik['kel_name'];?>, <?=$nik['kec_name'];?>">
+                          <input type="text" class="form-control" id="inputSuccess" name="alamat_guru" value="<?=$nik['ALAMAT'];?>, RT <?=$nik['NO_RT'];?>, RW <?=$nik['NO_RW'];?>, <?=$nik['KEL_NAME'];?>, <?=$nik['KEC_NAME'];?>">
                         </div>
                          <div class="form-group has-success">
                           <label class="control-label" for="inputSuccess">No Telp</label>

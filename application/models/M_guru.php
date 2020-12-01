@@ -25,6 +25,23 @@
             ];
         }
 
+        function get_nik($nik) {
+            // $url = 'http://sidoharjo-kulonprogo.desa.id/index.php/apis/get_nik/' . $nik;
+            $url = 'https://satudata.kulonprogokab.go.id/index.php/nik/cek_nik?app_user=taniku&nik=' . $nik;
+
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+            $hasil = curl_exec($ch);
+            if ($hasil === false) {
+                echo curl_error($ch);
+            }
+            error_reporting(0);
+
+            return $hasil;
+        }
+
         function input_data($data,$table){
             $this->db->insert($table,$data);
         }
@@ -102,20 +119,5 @@
             return $this->db->update('guru',$data);
         }
 
-    
-    function get_nik($nik) {
-        $url = 'http://sidoharjo-kulonprogo.desa.id/index.php/apis/get_nik/' . $nik;
-
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-
-        $hasil = curl_exec($ch);
-        if ($hasil === false) {
-            echo curl_error($ch);
-  }
-
-        return $hasil;
-    }
 
     }
