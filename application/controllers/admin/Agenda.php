@@ -21,22 +21,38 @@ class Agenda extends CI_Controller{
         $this->load->view('admin/admin/v_tambah_agenda', $data);
     }
     function tambah_aksi(){
-		$id_agenda = $this->input->post('id_agenda');
-		$tanggal_agenda = $this->input->post('tanggal_agenda');
-		$judul_agenda = $this->input->post('judul_agenda');
-		$keterangan_agenda = $this->input->post('keterangan_agenda');
-		$gambar = $this->input->post('gambar');
- 
-		$data = array(
-			'id_agenda' => $id_agenda,
-			'tanggal_agenda' => $tanggal_agenda,
-			'judul_agenda' => $judul_agenda,
-			'keterangan_agenda' => $keterangan_agenda,
-			'gambar' => $gambar
-			);
-		$this->m_agenda->input_data($data,'agenda');
-		redirect('admin/agenda');
-		// echo $this->db->last_query();
+    	$config['upload_path']         = 'images/';  // folder upload 
+        $config['allowed_types']        = 'gif|jpg|png'; // jenis file
+        $config['max_size']             = 3000;
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('gambar')) //sesuai dengan name pada form 
+        {
+               echo 'Anda gagal upload';
+               echo var_dump($this->upload->display_errors());
+        }
+        else
+        {
+			$id_agenda = $this->input->post('id_agenda');
+			$tanggal_agenda = $this->input->post('tanggal_agenda');
+			$judul_agenda = $this->input->post('judul_agenda');
+			$keterangan_agenda = $this->input->post('keterangan_agenda');
+			$file = $this->upload->data();
+            $gambar = $file['file_name'];
+	 
+			$data = array(
+				'id_agenda' => $id_agenda,
+				'tanggal_agenda' => $tanggal_agenda,
+				'judul_agenda' => $judul_agenda,
+				'keterangan_agenda' => $keterangan_agenda,
+				'gambar' => $gambar
+				);
+			$this->m_agenda->input_data($data,'agenda');
+			redirect('admin/agenda');
+		}
 	}
 	function edit($id)
 	{
@@ -73,7 +89,7 @@ class Agenda extends CI_Controller{
 	        $this->m_agenda->update_agenda($data, $id);
 	        // echo var_dump($this->upload->display_errors());
 	        redirect('admin/agenda');
-	        // echo $this->db->last_query();
+	        
 	    }else{ // Jika user tidak menceklis checkbox yang ada di form ubah, lakukan :
 	        // Proses ubah data ke Database
 	        $id = array('id_agenda'=>$id_agenda);

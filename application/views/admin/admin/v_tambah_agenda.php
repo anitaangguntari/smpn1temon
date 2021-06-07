@@ -69,7 +69,8 @@
               <h3>Tambah Agenda</h3>
             <div class="card-body">
                 <div class="panel-body">
-                    <form role="form" action="<?php echo base_url('admin/agenda/tambah_aksi') ; ?>" method="post">
+                  <?php echo form_open_multipart('admin/agenda/tambah_aksi'); ?>
+                    <!-- <form role="form" action="<?php echo base_url('admin/agenda/tambah_aksi') ; ?>" method="post"> -->
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group has-success">
@@ -100,6 +101,7 @@
                             </center>
                          </div>
                     </div><!--  end row -->
+                  <?php echo form_close() ?>
                 </div> <!-- end panel body -->
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>

@@ -103,8 +103,7 @@
                             <td><?php echo $p->isi_lainnya; ?></td>
                             <td><img src='<?=base_url()?>images/<?=$p->logo_sekolah;?>'></td>
                             <td>
-                              <a href="<?php echo base_url('admin/profil/edit/'.$p->id_profil) ?>"
-                               class="btn btn-success"><i class="fa fa-edit"></i> </a>
+                              <a href="<?php echo base_url('admin/profil/edit/'.$p->id_profil) ?>" class="btn btn-success"><i class="fa fa-edit"></i> </a>
                               <!-- <a href="<?php echo base_url('admin/profil/delete/'.$p->id_profil) ?>" class="btn btn-danger"><i class="fa fa-pencil"></i> </a> -->
                             </td>
                         </tr>
